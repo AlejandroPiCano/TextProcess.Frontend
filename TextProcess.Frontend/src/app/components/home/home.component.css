@@ -1,0 +1,19 @@
+p{
+  margin-top: 40px;
+  font-size: larger;
+}
+
+li {
+  list-style-type: none;
+}
+
+li a {
+  color: rgb(0, 206, 209) ;
+}
+
+img{
+  display: block ;
+  margin-left: auto ;
+  margin-right: auto ;
+  width: 50% ;
+}
