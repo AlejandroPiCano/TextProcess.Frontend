@@ -28,17 +28,20 @@ export class TextStatisticsComponent  implements OnInit {
       return;
     }
 
-    this.textProcessService.GetStatisticsText(this.textToAnalize).subscribe((res) => {
-
-      if (res) {
-        // this.textToAnalize = '';
-
+    this.textProcessService.GetStatisticsText(this.textToAnalize).subscribe(
+      {
+      next:
+      (res) => {
         this.textStatisticsResult = res;
-        //this.EmitUpdateSuccessfully();
-      } else {
-        alert(res.errors[0]);
+      },
+      error:
+      (res) => {
+        let errorMessage: string = res.error && res.error.errors && res.error.errors.orderOption && res.error.errors.orderOption.length > 0 && res.error.errors.orderOption[0] ? res.error.errors.orderOption[0] : res.error.title || res.error;
+        ;
+
+        alert(`An error occurred sorting the text: ${errorMessage}`);
       }
-    });
+  });
   }
 }
 

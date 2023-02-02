@@ -1,18 +1,25 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-color-red">
   <div class="input-group row">
-    <div class="col col-10">
-      <textarea class="form-control" placeholder="Text to order" rows="10" aria-label="Text to order" [(ngModel)]="textToOrder" aria-describedby="btnGroupAddon"></textarea>
-    </div>
-      <div class="col col-2 m">
-        <select name="miselect" [(ngModel)]="selectedOrderOption">
-          <option [value]="orderOption" *ngFor="let orderOption of orderOptions">{{orderOption}}</option>
+
+      <strong>Text to order</strong>
+      <textarea class="form-control" placeholder="Place your text here..." rows="10" aria-label="Text to order" [(ngModel)]="textToOrder" aria-describedby="btnGroupAddon"></textarea>
+
+
+        <div class="row">
+          <strong> Order Option</strong>
+          <select  class="form-select" [(ngModel)]="selectedOrderOption">
+            <option [value]="orderOption" *ngFor="let orderOption of orderOptions">{{orderOption}}</option>
           </select>
-        <div class="input-group-text btn btn-primary" id="btnGroupAddon" (click)="OrderText()">Order Text</div>
-      </div>
+        </div>
+
+
     </div>
 </nav>
 
+<div class="row margin-top-3">
+  <div class="input-group-text btn btn-primary" id="btnGroupAddon" (click)="OrderText()">Order Text</div>
+</div>
 
 <div>
   <app-text-order-details [textOrderList] = "textOrderResult" />

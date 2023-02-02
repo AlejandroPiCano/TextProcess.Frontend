@@ -1,14 +1,18 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-color-red">
   <div class="input-group row">
-    <div class="col col-10">
-      <textarea class="form-control" placeholder="Text to analize" rows="10" aria-label="Text to analize" [(ngModel)]="textToAnalize" aria-describedby="btnGroupAddon"></textarea>
-    </div>
-      <div class="col col-2 m">
-        <div class="input-group-text btn btn-primary" id="btnGroupAddon" (click)="AnalizeText()">Analize Text</div>
-      </div>
-    </div>
+
+      <strong> Text to analize</strong>
+      <textarea class="form-control" placeholder="Place your text here..." rows="10" aria-label="Text to analize" [(ngModel)]="textToAnalize" aria-describedby="btnGroupAddon"></textarea>
+  </div>
+
+
 </nav>
+<div class="row">
+  <div class="row">
+   <div class="input-group-text btn btn-primary" id="btnGroupAddon" (click)="AnalizeText()">Analize Text</div>
+</div>
+</div>
 
 
 <div>
